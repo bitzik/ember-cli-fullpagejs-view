@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-fullpagejs-view",
   "version": "0.2.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "An integration of fullPage.js within Ember views",
   "directories": {
     "doc": "doc",
     "test": "tests"
