@@ -1,117 +1,127 @@
-<!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
 
-  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
-  <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="javascripts/script.js"></script>
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
 
-  <title>Ember-cli-fullpagejs-view</title>
-  <meta name="description" content="Allow the use of fullpage.js on a particular view within Ember">
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Ember-cli-fullpagejs-view by bitzik</title>
+  </head>
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <body>
+    <a id="forkme_banner" href="https://github.com/bitzik/ember-cli-fullpagejs-view">View on GitHub</a>
+    <div class="shell">
 
-</head>
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Ember-cli-fullpagejs-view</h1>
+            <h2>Allow the use of fullpage.js on a particular view within Ember</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
 
-<body>
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/bitzik/ember-cli-fullpagejs-view/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/bitzik/ember-cli-fullpagejs-view/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
 
-  <div class="wrapper">
-    <header>
-      <h1 class="title">Ember-cli-fullpagejs-view</h1>
-    </header>
-    <div id="container">
-      <p class="tagline">Allow the use of fullpage.js on a particular view within Ember</p>
-      <div id="main" role="main">
-        <div class="download-bar">
-        <div class="inner">
-          <a href="https://github.com/bitzik/ember-cli-fullpagejs-view/tarball/master" class="download-button tar"><span>Download</span></a>
-          <a href="https://github.com/bitzik/ember-cli-fullpagejs-view/zipball/master" class="download-button zip"><span>Download</span></a>
-          <a href="https://github.com/bitzik/ember-cli-fullpagejs-view" class="code">View Ember-cli-fullpagejs-view on GitHub</a>
-        </div>
-        <span class="blc"></span><span class="trc"></span>
-        </div>
-        <article class="markdown-body">
-        <h3>Ember-cli-fullpagejs-view</h3>
-        
-        <p>I integrated the nice looking <a href="http://alvarotrigo.com/fullPage/">fullPage.js</a> library into the <a href="bitzik.com">Bitzik</a> front end and thought there might be someone else out there who might benefice from it.</p>
-        
-        <p>PR are welcome, issues reporting too (even better if you report the solution as well!)</p>
-        
-        <p>This is my first Ember-addon, do not hesitate to come up with suggestions/correction to make it more conventional.</p>
-        
-        <p>Happy Ember coding!</p>
-        
-        <h4>Usage</h4>
-        
-        <p>At its simplest, You just have to use the <code>FullpageJsView</code> as base for your Ember view:</p>
-        
-        <pre><code>import Ember from 'ember';
-        import FullpageJsView from 'ember-cli-fullpagejs-view/view/fullpage-js-view';
-        
-        
-        export default FullpageJsView.extend({
-        
-        });
-        </code></pre>
-        
-        <p>Optionally, you can setup some customization:</p>
-        
-        <pre><code>import Ember from 'ember';
-        
-        import FullpageJsView from 'ember-cli-fullpagejs-view/view/fullpage-js-view';
-        
-        export default FullpageJsView.extend({
-          fullpageOptions: {
-            sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-                anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
-                menu: '#menu',
-                scrollingSpeed: 1000
-          },
-        
-          fullpageSelector: ".fullpage-class",
-        
-          customInitilization: function () {},
-        
-          customRemoval: function () {}
-        });
-        </code></pre>
-        
-        <p>Options are:</p>
-        
-        <ul>
-        <li><code>fullpageOptions</code>:  object to be pass on to the fullpage constructor</li>
-        <li><code>fullpageSelector</code>: jQuery selector string that will be used to find the fullpage base element. Null or empty selector will default to <code>this.$()</code></li>
-        <li><code>customInitialization</code>: function that will be called when initizalising fullpage (i.e. <code>on('didInsertElement')</code>)</li>
-        <li><code>customRemoval</code>: function that will be called once the addon has tried to clean up any trace of fullpage presence. If you find something that was forgotten put it here (or fill in an issue / send me a PR !)</li>
-        </ul>
-        
-        
 
-        </article>
-      </div>
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
+<a id="ember-cli-fullpagejs-view" class="anchor" href="#ember-cli-fullpagejs-view" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ember-cli-fullpagejs-view</h1>
+
+<p>I integrated the nice looking <a href="http://alvarotrigo.com/fullPage/">fullPage.js</a> library into the <a href="bitzik.com">Bitzik</a> front end and thought there might be someone else out there who might benefice from it.</p>
+
+<p>PR are welcome, issues reporting too (even better if you report the solution as well!)</p>
+
+<p>This is my first Ember-addon, do not hesitate to come up with suggestions/correction to make it more conventional.</p>
+
+<p>Happy Ember coding!</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>At its simplest, You just have to use the <code>FullpageJsView</code> as base for your Ember view:</p>
+
+<pre><code>import Ember from 'ember';
+import FullpageJsView from 'ember-cli-fullpagejs-view/view/fullpage-js-view';
+
+
+export default FullpageJsView.extend({
+
+});
+</code></pre>
+
+<p>Optionally, you can setup some customization:</p>
+
+<pre><code>import Ember from 'ember';
+
+import FullpageJsView from 'ember-cli-fullpagejs-view/view/fullpage-js-view';
+
+export default FullpageJsView.extend({
+  fullpageOptions: {
+    sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+        menu: '#menu',
+        scrollingSpeed: 1000
+  },
+
+  fullpageSelector: ".fullpage-class",
+
+  customInitilization: function () {},
+
+  customRemoval: function () {}
+});
+</code></pre>
+
+<p>Options are:</p>
+
+<ul>
+<li>
+<code>fullpageOptions</code>:  object to be pass on to the fullpage constructor</li>
+<li>
+<code>fullpageSelector</code>: jQuery selector string that will be used to find the fullpage base element. Null or empty selector will default to <code>this.$()</code>
+</li>
+<li>
+<code>customInitialization</code>: function that will be called when initizalising fullpage (i.e. <code>on('didInsertElement')</code>)</li>
+<li>
+<code>customRemoval</code>: function that will be called once the addon has tried to clean up any trace of fullpage presence. If you find something that was forgotten put it here (or fill in an issue / send me a PR !)</li>
+</ul>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/bitzik">bitzik</a> can be found on <a href="https://github.com/bitzik/ember-cli-fullpagejs-view">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
     </div>
-    <footer>
-      <div class="owner">
-      <p><a href="https://github.com/bitzik" class="avatar"><img src="https://avatars3.githubusercontent.com/u/11089933?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/bitzik">bitzik</a> maintains <a href="https://github.com/bitzik/ember-cli-fullpagejs-view">Ember-cli-fullpagejs-view</a></p>
 
-
-      </div>
-      <div class="creds">
-        <small>This page generated using <a href="http://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
-      </div>
-    </footer>
-  </div>
-  <div class="current-section">
-    <a href="#top">Scroll to top</a>
-    <a href="https://github.com/bitzik/ember-cli-fullpagejs-view/tarball/master" class="tar">tar</a><a href="https://github.com/bitzik/ember-cli-fullpagejs-view/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
-    <p class="name"></p>
-  </div>
-
-  
-</body>
+    
+  </body>
 </html>
