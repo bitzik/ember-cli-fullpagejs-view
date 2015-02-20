@@ -6,7 +6,13 @@ export default Ember.View.extend({
    */
   initFullpage: function () {
     "use strict";
-    this.$().fullpage(this.get('fullpageOptions'));
+    var selector = this.get('fullpageSelector'), $element;
+    if (Ember.isNone(selector)) {
+      $element = this.$();
+    } else {
+      $element = this.$(selector);
+    }
+    $element.fullpage(this.get('fullpageOptions'));
     this.customInitilization();
   }.on('didInsertElement'),
   removeFullpage: function () {
@@ -32,6 +38,10 @@ export default Ember.View.extend({
    * contains the options that should be passed on to fullpage.js when initializing it.
    */
   fullpageOptions: {},
+  /**
+   * contains the selector that should host the fullpage initialization.
+   */
+  fullpageSelector: null,
   /**
    * function to override in case extra customization is required when loading initializing the view
    */
