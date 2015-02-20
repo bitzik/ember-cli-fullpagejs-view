@@ -1,25 +1,9 @@
 # Ember-cli-fullpagejs-view
 
-This README outlines the details of collaborating on this Ember addon.
+I integrated the nice looking (fullPage.js)[http://alvarotrigo.com/fullPage/] library into the (Bitzik)[bitzik.com] front end and thought there might be someone else out there who might benefice from it.
 
-## Installation
+PR are welcome, issues reporting too (even better if you report the solution as well!)
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+This is my first Ember-addon, do not hesitate to come up with suggestions/correction to make it more conventional.
 
-## Running
-
-* `ember server`
-* Visit your app at http://localhost:4200.
-
-## Running Tests
-
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+Happy Ember coding!

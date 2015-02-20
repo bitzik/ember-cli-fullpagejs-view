@@ -24,7 +24,7 @@ module.exports = function(environment) {
       'script-src': "'self'",
       'font-src': "'self'",
       'connect-src': "'self'",
-      'img-src': "'self' data:",
+      'img-src': "'self' data: http://alvarotrigo.com/fullPage/imgs/",
       'style-src': "'self' 'unsafe-inline'",
       'frame-src': "'self'"
     }
