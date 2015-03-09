@@ -19,6 +19,6 @@ module.exports = {
   // },
 
   afterInstall: function() {
-    return this.addBowerPackageToProject('fullpage.js', '2.5.7');
+    return this.addBowerPackageToProject('fullpage.js', '2.5.9');
   }
 };
