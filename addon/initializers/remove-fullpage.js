@@ -11,6 +11,6 @@ export function initialize() {
 }
 
 export default {
-  name: 'ember-cli-fullpagejs-view/no-fullpage-by-default',
+  name: 'ember-cli-fullpagejs-view/remove-fullpage',
   initialize: Ember.K
 };
