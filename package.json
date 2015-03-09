@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-fullpagejs-view",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "An integration of fullPage.js within Ember views",
   "directories": {
     "doc": "doc",
