@@ -35,7 +35,8 @@ export default Ember.View.extend({
     //Ember.$('.section').off('click', '.toSlide');
     //Ember.$(document).off('click', '.fullPage-slidesNav a');
 
-    Ember.$.fn.fullpage.destroy('all');
+    // Ember.$.fn.fullpage.destroy('all');
+    Ember.$.fn.fullpage.destroy();
 
     this.customRemoval();
   }.on('willDestroyElement'),
